@@ -8,7 +8,7 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
-    password_confirmation: '',
+    confirm_password: '',
   });
   const [error, setError] = useState('');
   const { register } = useAuth();
@@ -90,12 +90,12 @@ const Register = () => {
             margin="normal"
             required
             fullWidth
-            name="password_confirmation"
+            name="confirm_password" // changed
             label="Confirm Password"
             type="password"
-            id="password_confirmation"
+            id="confirm_password" // changed
             autoComplete="new-password"
-            value={userData.password_confirmation}
+            value={userData.confirm_password}
             onChange={handleChange}
           />
           <Button

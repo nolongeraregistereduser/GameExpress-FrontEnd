@@ -12,6 +12,8 @@ export const AuthProvider = ({ children }) => {
 
   // Check  user  auth
   useEffect(() => {
+   
+   
     const checkAuth = async () => {
       try {
         if (token) {
@@ -44,7 +46,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const { data } = await api.post('/login', credentials);
       
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token', data.data.token);
       setToken(data.token);
       setUser(data.user);
       setIsAuthenticated(true);
